@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Time</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    if (!localStorage.getItem("currentUser")) {
+        window.location.href = "login.html";
+    }
+
+    function logout() {
+        localStorage.removeItem("currentUser");
+        window.location.href = "login.html";
+    }
+
+    function changePassword() {
+        const username = localStorage.getItem("currentUser");
+
+        const oldPassword = prompt("กรอกรหัสผ่านเดิม");
+        if (oldPassword === null) return;
+
+        const savedPassword =
+            localStorage.getItem("password_" + username) || username;
+
+        if (oldPassword !== savedPassword) {
+            alert("รหัสผ่านเดิมไม่ถูกต้อง");
+            return;
+        }
+
+        const newPassword = prompt("กรอกรหัสผ่านใหม่");
+        if (!newPassword) {
+            alert("กรุณากรอกรหัสผ่านใหม่");
+            return;
+        }
+
+        const confirmPassword = prompt("ยืนยันรหัสผ่านใหม่");
+
+        if (newPassword !== confirmPassword) {
+            alert("รหัสผ่านใหม่ไม่ตรงกัน");
+            return;
+        }
+
+        localStorage.setItem("password_" + username, newPassword);
+
+        alert("เปลี่ยนรหัสผ่านสำเร็จ");
+    }
+</script>
+<body>
+    <form id="taskForm">
+
+        <input
+            id="taskName"
+            type="text"
+            placeholder="ชื่องาน"
+            required
+        >
+
+        <select id="subject" required>
+            <option value="">เลือกวิชา</option>
+            <option>คณิตศาสตร์</option>
+            <option>วิทยาศาสตร์</option>
+            <option>ภาษาไทย</option>
+            <option>ภาษาอังกฤษ</option>
+            <option>สังคมศึกษา</option>
+            <option>ประวัติศาสตร์</option>
+            <option>สุขศึกษา</option>
+            <option>พลศึกษา</option>
+            <option>ศิลปะ</option>
+            <option>การงานอาชีพ</option>
+            <option>คอมพิวเตอร์</option>
+            <option>อื่น ๆ</option>
+        </select>
+
+        <input
+            id="dueDate"
+            type="date"
+            required
+        >
+
+        <select id="priority">
+            <option>สูง</option>
+            <option selected>ปานกลาง</option>
+            <option>ต่ำ</option>
+        </select>
+
+        <button type="submit">เพิ่มงาน</button>
+
+    </form>
+
+    <h2>รายการงาน</h2>
+
+    <div id="taskList"></div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+    <script>
+        if (!localStorage.getItem("currentUser")) {
+            window.location.href = "login.html";
+        }
+
+        function logout() {
+            localStorage.removeItem("currentUser");
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+<header>
+    <h1>Smart Time</h1>
+
+    <div class="account-buttons">
+        <button class="change-password-btn" onclick="changePassword()">
+            เปลี่ยนรหัสผ่าน
+        </button>
+
+        <button class="logout-btn" onclick="logout()">
+            ออกจากระบบ
+        </button>
+    </div>
+</header>
+</html>

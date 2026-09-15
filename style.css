@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Mali", cursive;
+    background: #ffeaf2;
+    color: #6b5360;
+    max-width: 750px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* หัวเว็บ */
+
+header {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    text-align: center;
+    color: #e86f9a;
+    font-size: 32px;
+    margin: 0;
+}
+
+/* ปุ่มออกจากระบบ */
+
+.logout-btn {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    background: #f7b6c9;
+    color: #6b5360;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 12px;
+    font-family: "Mali", cursive;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #ee9eb7;
+}
+
+/* ช่องเพิ่มงาน */
+
+form {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 25px;
+    border: 3px solid #ffc5d8;
+    box-shadow: 0 6px 0 #f5b1c8;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+input,
+select {
+    background: #fff7fa;
+    color: #6b5360;
+    border: 2px solid #ffd0df;
+    border-radius: 15px;
+    padding: 12px;
+    font-family: "Mali", cursive;
+}
+
+input {
+    flex: 1;
+    min-width: 150px;
+}
+
+button {
+    background: #f28caf;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 11px 16px;
+    font-family: "Mali", cursive;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e9789e;
+}
+
+/* รายการงาน */
+
+h2 {
+    color: #e86f9a;
+    font-size: 22px;
+}
+
+.task {
+    background: #ffffff;
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 22px;
+    border: 2px solid #ffd0df;
+    box-shadow: 0 4px 0 #f5bfd0;
+}
+
+.task p {
+    margin: 7px 0;
+}
+
+.task p:first-child {
+    color: #e86f9a;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.completed {
+    opacity: 0.55;
+}
+
+.completed p:first-child {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.task button {
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+/* มือถือ */
+
+@media (max-width: 600px) {
+
+    body {
+        margin: 15px auto;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    input,
+    select,
+    form button {
+        width: 100%;
+    }
+
+    .logout-btn {
+        position: static;
+        display: block;
+        margin: 10px auto 0;
+    }
+}
+
+.login-box {
+    background: #ffffff;
+    width: 90%;
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 35px;
+    border-radius: 25px;
+    border: 3px solid #ffc5d8;
+    box-shadow: 0 6px 0 #f5b1c8;
+    text-align: center;
+}
+
+.login-box h1 {
+    color: #e86f9a;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.login-box h2 {
+    color: #6b5360;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.login-box input {
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px;
+    background: #fff7fa;
+    border: 2px solid #ffd0df;
+    border-radius: 15px;
+    font-family: "Mali", cursive;
+    color: #6b5360;
+}
+
+.login-box input:focus {
+    outline: none;
+    border-color: #f28caf;
+}
+
+.login-box button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    background: #f28caf;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-family: "Mali", cursive;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background: #e9789e;
+}
+
+#message {
+    color: #e86f9a;
+    margin-top: 15px;
+}

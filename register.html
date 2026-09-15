@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Time - สมัครสมาชิก</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <h1>Smart Time</h1>
+        <h2>สมัครสมาชิก</h2>
+
+        <input
+            id="newUsername"
+            type="text"
+            placeholder="ชื่อผู้ใช้"
+        >
+
+        <input
+            id="newEmail"
+            type="email"
+            placeholder="อีเมล"
+        >
+
+        <input
+            id="newPassword"
+            type="password"
+            placeholder="รหัสผ่าน"
+        >
+
+        <input
+            id="confirmPassword"
+            type="password"
+            placeholder="ยืนยันรหัสผ่าน"
+        >
+
+        <button onclick="register()">สมัครสมาชิก</button>
+
+        <button class="register-button" onclick="goLogin()">
+            กลับเข้าสู่ระบบ
+        </button>
+
+        <p id="message"></p>
+
+    </div>
+
+    <script src="register.js"></script>
+
+</body>
+</html>
